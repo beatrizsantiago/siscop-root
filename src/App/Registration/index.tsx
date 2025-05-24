@@ -32,7 +32,7 @@ const Registration = () => {
     try {
       const registerUseCase = new RegisterUseCase(firebaseAuth);
       await registerUseCase.execute(data);
-      navigate('/dashboard');
+      navigate('/dashboard', { replace: true });
     } catch {
       toast.error('Erro ao cadastrar usuário. Verifique os dados e tente novamente.');
     } finally {

@@ -30,7 +30,7 @@ const Login = () => {
     try {
       const loginUseCase = new LoginUseCase(firebaseAuth);
       await loginUseCase.execute(data);
-      navigate('/dashboard');
+      navigate('/dashboard', { replace: true });
     } catch {
       toast.error('Erro ao fazer login. Verifique os dados e tente novamente.');
     } finally {

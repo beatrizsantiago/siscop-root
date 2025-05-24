@@ -43,7 +43,7 @@ const Login = () => {
       <Box display="flex" justifyContent="center" marginBottom={1}>
         <img src={BrownLogo} alt="logo" width={50} />
       </Box>
-      <Typography variant="h6" lineHeight={1.2} align="center" fontWeight={700} color="secondary">
+      <Typography variant="h6" lineHeight={1.2} align="center" fontWeight={700} color="primary">
         Seja bem-vindo(a)!
       </Typography>
       <Typography variant="body2" marginTop={1} align="center" color="text.secondary">
@@ -55,7 +55,6 @@ const Login = () => {
           name="email"
           placeholder="E-mail"
           type="email"
-          color="secondary"
           fullWidth
           required
           startAdornment={(
@@ -69,7 +68,6 @@ const Login = () => {
           name="password"
           placeholder="Senha"
           type="password"
-          color="secondary"
           fullWidth
           required
           startAdornment={(
@@ -82,7 +80,6 @@ const Login = () => {
         <Button
           fullWidth
           variant="contained"
-          color="secondary"
           sx={{ mt: 3 }}
           type="submit"
           loading={loading}
@@ -95,7 +92,7 @@ const Login = () => {
           <Typography marginRight={0.5} variant="body2" color="text.secondary" fontWeight={600}>
             Não possui uma conta?
           </Typography>
-          <Link component={RouterLink} to="/cadastro" color="secondary" underline="hover">
+          <Link component={RouterLink} to="/cadastro" color="primary" underline="hover">
             <b>
               Cadastre-se
             </b>

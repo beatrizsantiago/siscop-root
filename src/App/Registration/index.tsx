@@ -45,7 +45,7 @@ const Registration = () => {
       <Box display="flex" justifyContent="center" marginBottom={1}>
         <img src={BrownLogo} alt="logo" width={50} />
       </Box>
-      <Typography variant="h6" lineHeight={1.2} align="center" fontWeight={700} color="secondary">
+      <Typography variant="h6" lineHeight={1.2} align="center" fontWeight={700} color="primary">
         Crie sua conta
       </Typography>
       <Typography variant="body2" marginTop={1} align="center" color="text.secondary" marginBottom={3}>
@@ -56,7 +56,6 @@ const Registration = () => {
         <Input
           name="name"
           placeholder="Nome"
-          color="secondary"
           inputProps={{ minLength: 3 }}
           fullWidth
           required
@@ -70,7 +69,6 @@ const Registration = () => {
           name="email"
           placeholder="E-mail"
           type="email"
-          color="secondary"
           fullWidth
           required
           startAdornment={(
@@ -84,7 +82,6 @@ const Registration = () => {
           name="password"
           placeholder="Senha"
           type="password"
-          color="secondary"
           inputProps={{ minLength: 6 }}
           fullWidth
           required
@@ -98,7 +95,6 @@ const Registration = () => {
         <Button
           fullWidth
           variant="contained"
-          color="secondary"
           sx={{ mt: 3 }}
           type="submit"
           loading={loading}
@@ -111,7 +107,7 @@ const Registration = () => {
           <Typography marginRight={0.5} variant="body2" color="text.secondary" fontWeight={600}>
             Já possui uma conta?
           </Typography>
-          <Link component={RouterLink} to="/" color="secondary" underline="hover">
+          <Link component={RouterLink} to="/" color="primary" underline="hover">
             <b>
               Faça login
             </b>

@@ -27,6 +27,7 @@
         "./node_modules/agro-core/dist/index.d.ts"
       ],
       "@assets/*": ["./src/assets/*"],
+      "@components/*": ["./src/components/*"],
     }
   },
   "include": ["src"]

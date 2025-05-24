@@ -1,15 +1,41 @@
+import { useState } from 'react';
 import {
   Box, Typography, Input, InputAdornment, Button, Link,
 } from '@mui/material';
-import { Link as RouterLink } from 'react-router';
+import { Link as RouterLink, useNavigate } from 'react-router';
 import { PasswordIcon, EnvelopeIcon } from '@phosphor-icons/react';
+import { firebaseAuth } from '@infrastructure/firebase/auth';
+import { toast } from 'react-toastify';
+import LoginUseCase from '@usecases/auth/login';
 import BrownLogo from '@assets/icons/brown_logo.png';
 import AuthContainer from '@components/AuthContainer';
 
 const Login = () => {
-  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const navigate = useNavigate();
+
+  const [loading, setLoading] = useState(false);
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Handle form submission logic here
+
+    setLoading(true);
+
+    const formData = new FormData(event.currentTarget);
+
+    const data = {
+      email: formData.get('email') as string,
+      password: formData.get('password') as string,
+    };
+
+    try {
+      const loginUseCase = new LoginUseCase(firebaseAuth);
+      await loginUseCase.execute(data);
+      navigate('/dashboard');
+    } catch {
+      toast.error('Erro ao fazer login. Verifique os dados e tente novamente.');
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -26,6 +52,7 @@ const Login = () => {
 
       <form onSubmit={onSubmit}>
         <Input
+          name="email"
           placeholder="E-mail"
           type="email"
           color="secondary"
@@ -39,6 +66,7 @@ const Login = () => {
           sx={{ my: 3 }}
         />
         <Input
+          name="password"
           placeholder="Senha"
           type="password"
           color="secondary"
@@ -57,6 +85,8 @@ const Login = () => {
           color="secondary"
           sx={{ mt: 3 }}
           type="submit"
+          loading={loading}
+          loadingPosition="start"
         >
           Entrar
         </Button>

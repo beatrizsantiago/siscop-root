@@ -1,15 +1,43 @@
+import { useState } from 'react';
 import {
   Box, Typography, Input, InputAdornment, Button, Link,
 } from '@mui/material';
 import { Link as RouterLink } from 'react-router';
 import { PasswordIcon, UserCircleIcon, EnvelopeIcon } from '@phosphor-icons/react';
+import { firebaseAuth } from '@infrastructure/firebase/auth';
+import { useNavigate } from 'react-router';
+import { toast } from 'react-toastify';
+import RegisterUseCase from '@usecases/auth/register';
 import BrownLogo from '@assets/icons/brown_logo.png';
 import AuthContainer from '@components/AuthContainer';
 
 const Registration = () => {
-  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const navigate = useNavigate();
+
+  const [loading, setLoading] = useState(false);
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Handle form submission logic here
+
+    setLoading(true);
+
+    const formData = new FormData(event.currentTarget);
+
+    const data = {
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      password: formData.get('password') as string,
+    };
+
+    try {
+      const registerUseCase = new RegisterUseCase(firebaseAuth);
+      await registerUseCase.execute(data);
+      navigate('/dashboard');
+    } catch {
+      toast.error('Erro ao cadastrar usuário. Verifique os dados e tente novamente.');
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -26,6 +54,7 @@ const Registration = () => {
 
       <form onSubmit={onSubmit}>
         <Input
+          name="name"
           placeholder="Nome"
           color="secondary"
           inputProps={{ minLength: 3 }}
@@ -38,6 +67,7 @@ const Registration = () => {
           )}
         />
         <Input
+          name="email"
           placeholder="E-mail"
           type="email"
           color="secondary"
@@ -51,6 +81,7 @@ const Registration = () => {
           sx={{ my: 3 }}
         />
         <Input
+          name="password"
           placeholder="Senha"
           type="password"
           color="secondary"
@@ -70,6 +101,8 @@ const Registration = () => {
           color="secondary"
           sx={{ mt: 3 }}
           type="submit"
+          loading={loading}
+          loadingPosition="start"
         >
           Cadastrar
         </Button>

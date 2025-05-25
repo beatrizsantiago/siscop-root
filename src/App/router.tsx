@@ -9,9 +9,18 @@ const router = createBrowserRouter([
   { path: '/', Component: Login },
   { path: '/cadastro', Component: Registration },
   {
-    element: <ProtectedRoute />,
+    Component: ProtectedRoute,
     children: [
-      { path: '/dashboard', element: <Dashboard /> },
+      {
+        path: '/dashboard',
+        Component: Dashboard,
+        children: [
+          { path: 'vendas', element: <h1>Vendas</h1> },
+          { path: 'producao', element: <h1>Produção</h1> },
+          { path: 'estoque', element: <h1>Estoque</h1> },
+          { path: 'metas', element: <h1>Metas</h1> },
+        ],
+      },
     ],
   },
 ]);

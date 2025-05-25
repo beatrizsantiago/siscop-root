@@ -1,0 +1,1 @@
+export const NAVBAR_SIZE = '70px';

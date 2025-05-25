@@ -11,7 +11,7 @@ const Navbar = () => {
   const { pathname } = useLocation();
 
   const { breakpoints } = useTheme();
-  const isBigScreen = useMediaQuery(breakpoints.up('sm'))
+  const isBigScreen = useMediaQuery(breakpoints.up('md'))
 
   const hideMenu = pathname === '/dashboard';
 
@@ -38,7 +38,7 @@ const Navbar = () => {
       height={NAVBAR_SIZE}
       bgcolor="primary.main"
       display="flex"
-      justifyContent={hideMenu ? 'flex-end' : { xs: 'flex-end', sm: 'center'}}
+      justifyContent={hideMenu ? 'flex-end' : { xs: 'flex-end', md: 'center'}}
       alignItems="center"
       position="fixed"
       zIndex={1000}

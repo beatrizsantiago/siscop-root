@@ -14,7 +14,7 @@ const ListMenu = () => {
     <Box display="flex" alignItems="center" justifyContent="center" minHeight="80vh" padding={3}>
       <Box zIndex={1}>
         <Typography align="center" fontWeight={500} marginBottom={1}>
-          Olá, Bia! Bem vindo(a) 😄
+          Olá, bem vindo(a) 😄
         </Typography>
         <Typography fontSize={{ xs: '1.25rem', md: '1.5rem' }} align="center" fontWeight={600} marginBottom={3}>
           Escolha uma área para começar!

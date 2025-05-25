@@ -2,6 +2,8 @@ import BarChartIcon from '@assets/icons/bar_chart.png';
 import BoxesIcon from '@assets/icons/boxes.png';
 import MoneyIcon from '@assets/icons/money.png';
 import TractorIcon from '@assets/icons/tractor.png';
+import WheatSackIcon from '@assets/icons/wheat_sack.png';
+import FieldIcon from '@assets/icons/field.png';
 
 export const MENU_ITEMS = [
   {
@@ -27,5 +29,17 @@ export const MENU_ITEMS = [
     url: '/metas',
     description: 'Monitoramento contínuo das metas estabelecidas, avaliando desempenho e resultados.',
     icon: BarChartIcon,
+  },
+  {
+    label: 'Fazendas',
+    url: '/fazendas',
+    description: 'Gerencie as fazendas cadastradas com facilidade: crie, edite ou exclua registros.',
+    icon: FieldIcon,
+  },
+  {
+    label: 'Produtos',
+    url: '/produtos',
+    description: 'Administre os produtos: adicione, atualize, consulte ou remova conforme necessário.',
+    icon: WheatSackIcon,
   },
 ];

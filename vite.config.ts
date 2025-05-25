@@ -5,6 +5,9 @@ import path from 'path';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  server: {
+    port: 3000,
+  },
   resolve: {
     alias: {
       '@assets': path.resolve(__dirname, 'src/assets'),
@@ -16,6 +19,6 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    exclude: ['@phosphor-icons/react']  // or 'phosphor-react', depending on what you use
+    exclude: ['@phosphor-icons/react'],
   },
 })

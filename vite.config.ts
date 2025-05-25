@@ -1,10 +1,26 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite';
+import { federation } from '@module-federation/vite';
 import react from '@vitejs/plugin-react'
 import path from 'path';
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    federation({
+      name: 'host',
+      remotes: {
+        products: {
+          type: 'module',
+          name: 'products',
+          entry: 'http://localhost:3001/remoteEntry.js',
+          entryGlobalName: 'products',
+          shareScope: 'default',
+        },
+      },
+      filename: 'remoteEntry.js',
+      shared: ['react', 'react-dom'],
+    }),
+  ],
   server: {
     port: 3000,
   },
@@ -21,4 +37,4 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['@phosphor-icons/react'],
   },
-})
+});

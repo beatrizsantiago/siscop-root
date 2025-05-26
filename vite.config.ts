@@ -16,6 +16,13 @@ export default defineConfig({
           entryGlobalName: 'products',
           shareScope: 'default',
         },
+        farms: {
+          type: 'module',
+          name: 'farms',
+          entry: 'http://localhost:3002/remoteEntry.js',
+          entryGlobalName: 'farms',
+          shareScope: 'default',
+        },
       },
       filename: 'remoteEntry.js',
       shared: ['react', 'react-dom'],

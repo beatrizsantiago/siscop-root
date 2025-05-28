@@ -9,6 +9,7 @@ import Dashboard from './Dashboard';
 
 const RemoteProductsApp = lazy(() => import('products/products-app'));
 const RemoteFarmsApp = lazy(() => import('farms/farms-app'));
+const RemoteInventoryApp = lazy(() => import('inventory/inventory-app'));
 
 const router = createBrowserRouter([
   { path: '/', Component: Login },
@@ -22,8 +23,15 @@ const router = createBrowserRouter([
         children: [
           { path: 'vendas', element: <h1>Vendas</h1> },
           { path: 'producao', element: <h1>Produção</h1> },
-          { path: 'estoque', element: <h1>Estoque</h1> },
           { path: 'metas', element: <h1>Metas</h1> },
+          {
+            path: 'estoque',
+            element: (
+              <Suspense fallback={<LoadingModule />}>
+                <RemoteInventoryApp />
+              </Suspense>
+            )
+          },
           {
             path: 'fazendas',
             element: (

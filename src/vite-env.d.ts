@@ -9,3 +9,8 @@ declare module 'farms/farms-app' {
   const FarmsApp: React.ComponentType;
   export default FarmsApp;
 }
+
+declare module 'inventory/inventory-app' {
+  const InventoryApp: React.ComponentType;
+  export default InventoryApp;
+}

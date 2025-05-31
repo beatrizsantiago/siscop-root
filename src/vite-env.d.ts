@@ -14,3 +14,8 @@ declare module 'inventory/inventory-app' {
   const InventoryApp: React.ComponentType;
   export default InventoryApp;
 }
+
+declare module 'sales/sales-app' {
+  const SalesApp: React.ComponentType;
+  export default SalesApp;
+}

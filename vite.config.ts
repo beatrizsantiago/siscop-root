@@ -30,6 +30,13 @@ export default defineConfig({
           entryGlobalName: 'inventory',
           shareScope: 'default',
         },
+        sales: {
+          type: 'module',
+          name: 'sales',
+          entry: 'http://localhost:3004/remoteEntry.js',
+          entryGlobalName: 'sales',
+          shareScope: 'default',
+        },
       },
       filename: 'remoteEntry.js',
       shared: ['react', 'react-dom'],

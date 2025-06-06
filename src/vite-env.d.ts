@@ -19,3 +19,8 @@ declare module 'sales/sales-app' {
   const SalesApp: React.ComponentType;
   export default SalesApp;
 }
+
+declare module 'production/production-app' {
+  const ProductionApp: React.ComponentType;
+  export default ProductionApp;
+}

@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 import { Box, useMediaQuery, useTheme } from '@mui/material';
 import WhiteLogo from '@assets/icons/white_logo.png';
 
@@ -9,6 +9,7 @@ import BurgerMenu from './BurgerMenu';
 
 const Navbar = () => {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   const { breakpoints } = useTheme();
   const isBigScreen = useMediaQuery(breakpoints.up('md'))
@@ -43,12 +44,18 @@ const Navbar = () => {
       position="fixed"
       zIndex={1000}
     >
-      <img
-        src={WhiteLogo}
-        alt="logo"
-        width={40}
-        style={{ position: 'absolute', left: 20 }}
-      />
+      <Box
+        position="absolute"
+        left={20}
+        onClick={() => navigate('/dashboard')}
+        sx={{ cursor: 'pointer' }}
+      >
+        <img
+          src={WhiteLogo}
+          alt="logo"
+          width={40}
+        />
+      </Box>
 
       {currentComponent()}
     </Box>

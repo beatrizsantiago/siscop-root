@@ -7,16 +7,16 @@ import FieldIcon from '@assets/icons/field.png';
 
 export const MENU_ITEMS = [
   {
-    label: 'Vendas',
-    url: '/vendas',
-    description: 'Análise completa de vendas, focando nos produtos mais rentáveis e lucrativos.',
-    icon: MoneyIcon,
+    label: 'Produtos',
+    url: '/produtos',
+    description: 'Administre os produtos: adicione, atualize, consulte ou remova conforme necessário.',
+    icon: WheatSackIcon,
   },
   {
-    label: 'Produção',
-    url: '/producao',
-    description: 'Acompanhamento das culturas: aguardando plantio, em produção ou já colhidas.',
-    icon: TractorIcon,
+    label: 'Fazendas',
+    url: '/fazendas',
+    description: 'Gerencie as fazendas cadastradas com facilidade: crie, edite ou exclua registros.',
+    icon: FieldIcon,
   },
   {
     label: 'Estoque',
@@ -31,15 +31,15 @@ export const MENU_ITEMS = [
     icon: BarChartIcon,
   },
   {
-    label: 'Fazendas',
-    url: '/fazendas',
-    description: 'Gerencie as fazendas cadastradas com facilidade: crie, edite ou exclua registros.',
-    icon: FieldIcon,
+    label: 'Vendas',
+    url: '/vendas',
+    description: 'Análise completa de vendas, focando nos produtos mais rentáveis e lucrativos.',
+    icon: MoneyIcon,
   },
   {
-    label: 'Produtos',
-    url: '/produtos',
-    description: 'Administre os produtos: adicione, atualize, consulte ou remova conforme necessário.',
-    icon: WheatSackIcon,
+    label: 'Produção',
+    url: '/producao',
+    description: 'Acompanhamento das culturas: aguardando plantio, em produção ou já colhidas.',
+    icon: TractorIcon,
   },
 ];

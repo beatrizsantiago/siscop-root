@@ -24,3 +24,8 @@ declare module 'production/production-app' {
   const ProductionApp: React.ComponentType;
   export default ProductionApp;
 }
+
+declare module 'goals/goals-app' {
+  const GoalsApp: React.ComponentType;
+  export default GoalsApp;
+}

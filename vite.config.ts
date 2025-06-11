@@ -44,9 +44,22 @@ export default defineConfig({
           entryGlobalName: 'production',
           shareScope: 'default',
         },
+        goals: {
+          type: 'module',
+          name: 'goals',
+          entry: 'http://localhost:3006/remoteEntry.js',
+          entryGlobalName: 'goals',
+          shareScope: 'default',
+        },
       },
       filename: 'remoteEntry.js',
-      shared: ['react', 'react-dom'],
+      shared: [
+        'react',
+        'react-dom',
+        '@mui/material',
+        '@emotion/react',
+        '@emotion/styled',
+      ],
     }),
   ],
   server: {

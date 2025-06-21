@@ -1,9 +1,9 @@
 import { AuthRepository } from '@domain/repositories/AuthRepository';
 import { updateProfile } from 'firebase/auth';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import User from '@domain/entities/User';
 
-import { auth } from './config';
+import { auth, googleProvider } from './config';
 
 class FirebaseAuth implements AuthRepository {
   async login({ email, password }:User) {
@@ -23,6 +23,11 @@ class FirebaseAuth implements AuthRepository {
       displayName: name,
     });
 
+    return credentials.user.getIdToken();
+  }
+
+  async loginWithGoogle() {
+    const credentials = await signInWithPopup(auth, googleProvider);
     return credentials.user.getIdToken();
   }
 };

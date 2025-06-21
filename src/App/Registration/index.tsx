@@ -10,6 +10,7 @@ import { toast } from 'react-toastify';
 import RegisterUseCase from '@usecases/auth/register';
 import BrownLogo from '@assets/icons/brown_logo.png';
 import AuthContainer from '@components/AuthContainer';
+import GoogleLogin from '@components/GoogleLogin';
 
 const Registration = () => {
   const navigate = useNavigate();
@@ -102,18 +103,20 @@ const Registration = () => {
         >
           Cadastrar
         </Button>
-
-        <Box display="flex" alignItems="center" justifyContent="center" fontSize="0.875rem" marginTop={2}>
-          <Typography marginRight={0.5} variant="body2" color="text.secondary" fontWeight={600}>
-            Já possui uma conta?
-          </Typography>
-          <Link component={RouterLink} to="/" color="primary" underline="hover">
-            <b>
-              Faça login
-            </b>
-          </Link>
-        </Box>
       </form>
+
+      <GoogleLogin />
+
+      <Box display="flex" alignItems="center" justifyContent="center" fontSize="0.875rem" marginTop={2}>
+        <Typography marginRight={0.5} variant="body2" color="text.secondary" fontWeight={600}>
+          Já possui uma conta?
+        </Typography>
+        <Link component={RouterLink} to="/" color="primary" underline="hover">
+          <b>
+            Faça login
+          </b>
+        </Link>
+      </Box>
     </AuthContainer>
   );
 }

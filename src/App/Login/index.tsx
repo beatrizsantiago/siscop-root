@@ -9,6 +9,7 @@ import { toast } from 'react-toastify';
 import LoginUseCase from '@usecases/auth/login';
 import BrownLogo from '@assets/icons/brown_logo.png';
 import AuthContainer from '@components/AuthContainer';
+import GoogleLogin from '@components/GoogleLogin';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -87,18 +88,20 @@ const Login = () => {
         >
           Entrar
         </Button>
-
-        <Box display="flex" alignItems="center" justifyContent="center" fontSize="0.875rem" marginTop={2}>
-          <Typography marginRight={0.5} variant="body2" color="text.secondary" fontWeight={600}>
-            Não possui uma conta?
-          </Typography>
-          <Link component={RouterLink} to="/cadastro" color="primary" underline="hover">
-            <b>
-              Cadastre-se
-            </b>
-          </Link>
-        </Box>
       </form>
+
+      <GoogleLogin />
+      
+      <Box display="flex" alignItems="center" justifyContent="center" fontSize="0.875rem" marginTop={2}>
+        <Typography marginRight={0.5} variant="body2" color="text.secondary" fontWeight={600}>
+          Não possui uma conta?
+        </Typography>
+        <Link component={RouterLink} to="/cadastro" color="primary" underline="hover">
+          <b>
+            Cadastre-se
+          </b>
+        </Link>
+      </Box>
     </AuthContainer>
   );
 }

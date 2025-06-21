@@ -9,7 +9,7 @@ const LogoutButton = () => {
   return (
     <Button
       variant="contained"
-      endIcon={<SignOutIcon size={20} weight="bold" />}
+      endIcon={<SignOutIcon size={20} weight="bold" data-testid="signout-icon" />}
       sx={{ position: 'absolute', right: 20, bgcolor: 'primary.dark' }}
       onClick={logout}
     >

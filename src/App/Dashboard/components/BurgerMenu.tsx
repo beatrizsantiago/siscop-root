@@ -19,9 +19,9 @@ const BurgerMenu = () => {
     <Box marginRight={1}>
       <IconButton onClick={() => setShowMenu((prev) => !prev)}>
         {showMenu ? (
-          <XIcon size={32} color="#fff" />
+          <XIcon size={32} color="#fff" data-testid="x-icon" />
         ) : (
-          <ListIcon size={32} color="#fff" />
+          <ListIcon size={32} color="#fff" data-testid="list-icon" />
         )}
       </IconButton>
 
@@ -58,7 +58,7 @@ const BurgerMenu = () => {
             </Link>
           ))}
           <Button
-            endIcon={<SignOutIcon size={20} weight="bold" />}
+            endIcon={<SignOutIcon size={20} weight="bold" data-testid="signout-icon" />}
             onClick={logout}
             fullWidth
             sx={{

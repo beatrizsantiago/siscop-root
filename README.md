@@ -108,3 +108,9 @@ npm run dev
 ```
 
 Com o projeto rodando, abra [http://localhost:3000](http://localhost:3000) com seu navegador.
+
+Para rodar os testes, rode o seguinte comando:
+
+```bash
+npm run test
+```

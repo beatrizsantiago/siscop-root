@@ -16,6 +16,7 @@
 - [Firebase](https://firebase.google.com) — backend como serviço (BaaS) para autenticação, banco de dados e hospedagem;
 - [react-toastify](https://fkhadra.github.io/react-toastify/introduction/) — sistema de notificações e alertas;
 - [react-router](https://reactrouter.com/) — biblioteca de roteamento declarativo.
+- [date-fns](https://date-fns.org/) — para lidar com datas;
 - [@module-federation/vite](https://github.com/module-federation/vite) — integração de Module Federation para arquitetura de microfrontends.
 
 ### 🛠️ Ferramentas de Desenvolvimento

@@ -2,6 +2,7 @@ import {
   getApp, getApps, initializeApp, FirebaseApp,
 } from 'firebase/app';
 import { getAuth, GoogleAuthProvider } from 'firebase/auth';
+import { Firestore, getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -13,15 +14,17 @@ const firebaseConfig = {
 };
 
 let app: FirebaseApp;
-
+let firestore: Firestore;
 
 if (!getApps().length) {
   app = initializeApp(firebaseConfig);
+  firestore = getFirestore(app);
 } else {
   app = getApp();
+  firestore = getFirestore(app);
 };
 
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 
-export { app, auth, googleProvider };
+export { app, auth, googleProvider, firestore };

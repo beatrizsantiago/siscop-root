@@ -78,4 +78,7 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['@phosphor-icons/react'],
   },
+  build: {
+    target: 'esnext',
+  }
 });

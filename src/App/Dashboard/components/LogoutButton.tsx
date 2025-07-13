@@ -10,7 +10,7 @@ const LogoutButton = () => {
     <Button
       variant="contained"
       endIcon={<SignOutIcon size={20} weight="bold" data-testid="signout-icon" />}
-      sx={{ position: 'absolute', right: 20, bgcolor: 'primary.dark' }}
+      sx={{ bgcolor: 'primary.dark' }}
       onClick={logout}
     >
       Sair

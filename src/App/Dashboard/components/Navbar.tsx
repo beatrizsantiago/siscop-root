@@ -6,6 +6,7 @@ import { NAVBAR_SIZE } from '../utils/sizes';
 import InlineMenu from './InlineMenu';
 import LogoutButton from './LogoutButton';
 import BurgerMenu from './BurgerMenu';
+import NotificationButton from './NotificationButton';
 
 const Navbar = () => {
   const { pathname } = useLocation();
@@ -18,19 +19,32 @@ const Navbar = () => {
 
   const currentComponent = () => {
     if(hideMenu) {
-      return <LogoutButton />
+      return (
+        <Box display="flex" alignItems="center" gap={2}>
+          <NotificationButton />
+          <LogoutButton />
+        </Box>
+      );
     }
 
     if (isBigScreen) {
       return (
         <>
           <InlineMenu />
-          <LogoutButton />
+          <Box display="flex" alignItems="center" gap={2}>
+            <NotificationButton />
+            <LogoutButton />
+          </Box>
         </>
       );
     } 
 
-    return <BurgerMenu />;
+    return (
+      <Box display="flex" alignItems="center" gap={2}>
+        <NotificationButton />
+        <BurgerMenu />
+      </Box>
+    );
   };
 
   return (
@@ -39,14 +53,13 @@ const Navbar = () => {
       height={NAVBAR_SIZE}
       bgcolor="primary.main"
       display="flex"
-      justifyContent={hideMenu ? 'flex-end' : { xs: 'flex-end', md: 'center'}}
+      justifyContent="space-between"
       alignItems="center"
       position="fixed"
+      paddingX={2}
       zIndex={1000}
     >
       <Box
-        position="absolute"
-        left={20}
         onClick={() => navigate('/dashboard')}
         sx={{ cursor: 'pointer' }}
       >

@@ -16,7 +16,7 @@ const BurgerMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <Box marginRight={1}>
+    <Box>
       <IconButton onClick={() => setShowMenu((prev) => !prev)}>
         {showMenu ? (
           <XIcon size={32} color="#fff" data-testid="x-icon" />

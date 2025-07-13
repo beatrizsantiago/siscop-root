@@ -84,7 +84,7 @@
 
 ### 🎯 Getting Started
 
-Antes de tudo, é necessário iniciar todas as parcelas do microfrontend para que o root funcione como o esperado.
+> ⚠️ O projeto **root** deve ser iniciado **apenas após** a inicialização de todos os outros projetos.
 
 - [`siscop-products`](https://github.com/beatrizsantiago/siscop-products) — Gerenciamento de produtos agrícolas.
 - [`siscop-farms`](https://github.com/beatrizsantiago/siscop-farms) — Administração de fazendas e suas informações.

@@ -88,6 +88,7 @@ const NotificationList = ({ onClose }:Props) => {
       width={{ xs: '100%', md: 320 }}
       maxHeight="100vh"
       sx={{ overflowY: 'auto' }}
+      boxShadow="0 2px 8px rgba(0, 0, 0, 0.1)"
     >
       <Box
         display="flex"
